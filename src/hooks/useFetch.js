@@ -5,9 +5,10 @@ const useFetch = (endpoint, limite) => {
   const [data, setData] = useState([]);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true);
-console.log('=====Limite===============================');
-console.log(limite);
-console.log('====================================');
+  const [changing, setChanging] = useState(false);
+  console.log('=====Limite===============================');
+  console.log(limite);
+  console.log('====================================');
   async function fetchData() {
     const response = await axios.get(endpoint, {
       params: {
@@ -30,9 +31,9 @@ console.log('====================================');
     } catch (error) {
       console.log('error:' + error);
     }
-  }, [endpoint, page]);
+  }, [endpoint, page, changing]);
 
-  return { data, page, loading, setPage };
+  return { data, page, loading, changing, setPage, setChanging };
 };
 
 export default useFetch;

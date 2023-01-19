@@ -4,7 +4,6 @@ import { LockClosedIcon } from '@heroicons/react/24/solid';
 import { useAuth, AuthProvider } from '@hooks/useAuth';
 import Link from 'next/link';
 
-
 export default function LoginPage() {
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
